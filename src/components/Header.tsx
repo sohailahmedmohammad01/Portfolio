@@ -1,110 +1,106 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import logo from '../images/Logo.jpeg';
+import { useEffect, useState } from "react";
+import { FaBars, FaDownload, FaTimes } from "react-icons/fa";
+import profileImg from "../images/Logo.jpeg";
+
+const navItems = [
+  { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#skills", label: "Skills" },
+  { href: "#contact", label: "Contact" },
+];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
 
-  const menuItems = [
-    { to: '/', text: 'About' },
-    { to: '/experience', text: 'Experience' },
-    { to: '/education', text: 'Education' },
-    { to: '/skills', text: 'Skills' },
-    { to: '/projects', text: 'Projects' },
-    { to: '/certifications', text: 'Certifications' },
-    { to: '/documents', text: 'Documents' },
-    { to: '/contact', text: 'Contact' },
-  ];
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, []);
 
   return (
-    <header
-      className="fixed w-full bg-white shadow-md z-50"
-      style={{ fontFamily: "'serif', sans-serif" }}
-    >
-      <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 lg:px-8" aria-label="Primary navigation">
+        <a href="#about" className="flex min-w-0 items-center gap-3" aria-label="Mohammad Sohail Ahmed, home">
+          <img src={profileImg} alt="" className="h-9 w-9 rounded-full border border-slate-200 object-cover object-top" />
+          <span className="truncate text-sm font-bold text-slate-900 sm:text-base">Mohammad Sohail Ahmed</span>
+        </a>
 
-        {/* LEFT: Hamburger */}
-        <button
-          className="md:hidden text-gray-700"
-          onClick={() => setIsMenuOpen(true)}
-        >
-          <FaBars size={22} />
-        </button>
-
-        {/* CENTER: Logo + Name */}
-        <Link to="/" className="flex items-center space-x-2">
-          <img
-            src={logo}
-            alt="Logo"
-            className="w-10 h-10 rounded-full object-cover object-[50%_20%] border-2 border-black-600"
-          />
-          <span className="text-lg md:text-xl font-bold text-gray-800">
-            Mohammad Sohail Ahmed
-          </span>
-        </Link>
-
-        {/* RIGHT: Desktop Menu */}
-        <div className="hidden md:flex space-x-6">
-          {menuItems.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className={`relative ${location.pathname === item.to
-                  ? 'text-blue-600 font-semibold'
-                  : 'text-gray-600 hover:text-blue-600'
-                } transition`}
-            >
-              {item.text}
-            </Link>
+        <div className="hidden items-center gap-7 md:flex">
+          {navItems.map((item) => (
+            <a key={item.href} href={item.href} className="text-sm font-medium text-slate-600 transition hover:text-blue-700">
+              {item.label}
+            </a>
           ))}
+          <a
+            href="/docs/resume.pdf"
+            download
+            className="inline-flex h-10 items-center gap-2 rounded-lg bg-slate-950 px-4 text-sm font-semibold text-white transition hover:bg-blue-700"
+          >
+            <FaDownload aria-hidden="true" />
+            Resume
+          </a>
         </div>
 
-        {/* EMPTY div to balance layout */}
-        <div className="md:hidden w-6"></div>
+        <button
+          type="button"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 md:hidden"
+          onClick={() => setIsMenuOpen(true)}
+          aria-label="Open navigation"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
+        >
+          <FaBars aria-hidden="true" />
+        </button>
       </nav>
 
-      {/* ✅ Mobile Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'
-          } transition-transform duration-300 z-50`}
+        className={"fixed inset-0 z-50 bg-slate-950/40 transition-opacity md:hidden " + (isMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0")}
+        onClick={() => setIsMenuOpen(false)}
+        aria-hidden="true"
+      />
+      <div
+        id="mobile-navigation"
+        className={"fixed right-0 top-0 z-50 flex h-dvh w-[min(20rem,86vw)] flex-col bg-white p-5 shadow-2xl transition-transform duration-300 md:hidden " + (isMenuOpen ? "translate-x-0" : "translate-x-full")}
       >
-        {/* Close Button */}
-        <div className="flex justify-between items-center p-4 border-b">
-          <span className="font-bold text-gray-800">Menu</span>
-          <FaTimes
-            size={20}
-            className="cursor-pointer"
+        <div className="flex items-center justify-between border-b border-slate-200 pb-5">
+          <span className="text-sm font-bold text-slate-900">Navigation</span>
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700"
             onClick={() => setIsMenuOpen(false)}
-          />
+            aria-label="Close navigation"
+          >
+            <FaTimes aria-hidden="true" />
+          </button>
         </div>
 
-        {/* Menu Items */}
-        <div className="flex flex-col p-4 space-y-4">
-          {menuItems.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
+        <div className="flex flex-col py-5">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
               onClick={() => setIsMenuOpen(false)}
-              className={`${location.pathname === item.to
-                  ? 'text-blue-600 font-semibold'
-                  : 'text-gray-700 hover:text-blue-600'
-                } transition`}
+              className="border-b border-slate-100 py-4 text-base font-semibold text-slate-700"
             >
-              {item.text}
-            </Link>
+              {item.label}
+            </a>
           ))}
         </div>
-      </div>
 
-      {/* ✅ Overlay */}
-      {isMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-40 z-40"
-          onClick={() => setIsMenuOpen(false)}
-        ></div>
-      )}
+        <a
+          href="/docs/resume.pdf"
+          download
+          className="mt-auto inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-slate-950 px-5 font-semibold text-white"
+        >
+          <FaDownload aria-hidden="true" />
+          Download resume
+        </a>
+      </div>
     </header>
   );
 }

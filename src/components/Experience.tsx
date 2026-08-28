@@ -1,240 +1,82 @@
-import {
-  FaBriefcase,
-  FaMapMarkerAlt,
-  FaCalendarAlt,
-  FaBuilding,
-  FaCode,
-} from "react-icons/fa";
+import { FaBuilding, FaCheck, FaMapMarkerAlt } from "react-icons/fa";
+
+const roles = [
+  {
+    period: "Aug 2026 - Present",
+    title: "Software Engineer",
+    project: "iShopChangi - SAP Commerce Cloud",
+    points: [
+      "Deliver backend enhancements across catalog, product, pricing, promotions, orders, customers, and checkout.",
+      "Translate business requirements into OCC APIs, custom extensions, items.xml models, populators, converters, and commerce processes.",
+      "Own FlexibleSearch, ImpEx, Solr, CronJobs, catalog synchronization, Backoffice operations, and release validation.",
+    ],
+    technologies: ["Java", "Spring", "SAP Commerce Cloud", "OCC", "Solr"],
+  },
+  {
+    period: "Jan 2024 - Jul 2026",
+    title: "Software Engineer",
+    project: "TREX - Cloud-Native Marketplace Platform",
+    points: [
+      "Delivered Java and Spring Boot microservices plus REST and GraphQL APIs for core marketplace workflows.",
+      "Built AWS Lambda and AppSync workflows and Dockerized ECS services backed by DynamoDB and relational databases.",
+      "Used Dynatrace, Datadog, tracing, and log analysis to resolve production issues, then supported reviews and debugging for junior engineers.",
+    ],
+    technologies: ["Spring Boot", "AWS", "ECS", "DynamoDB", "Datadog"],
+  },
+];
 
 export default function Experience() {
-  const experiences = [
-    {
-      company: "CJSS Technologies Private Ltd",
-      location: "Hyderabad",
-      position: "Software Engineer",
-      period: "Feb 2024 – Present",
-      client: "Changi Airport Group",
-      project: "TREX Marketplace",
-      role: "Software Developer",
-      description:
-        "TREX is the marketplace platform for IShopChangi merchants, enabling inventory, pricing, order, and user management for seamless retail operations.",
-
-      responsibilities: [
-        "Developed scalable backend services and APIs using Spring Boot and Java",
-        "Built microservices and integrated RESTful APIs with enterprise systems",
-        "Worked with AWS services including ECS, Lambda, S3, CloudWatch, and Auto Scaling",
-        "Implemented CI/CD pipelines using Jenkins for automated deployments",
-        "Optimized performance using scheduled jobs and efficient backend processing",
-        "Collaborated in Agile teams with code reviews and technical discussions",
-        "Implemented unit and integration testing using JUnit and Mockito",
-        "Integrated SAP and Okta for secure enterprise workflows",
-      ],
-
-      technologies: [
-        "Java 17",
-        "Spring Boot",
-        "Microservices",
-        "REST APIs",
-        "AWS",
-        "ECS",
-        "Lambda",
-        "CloudWatch",
-        "DynamoDB",
-        "Jenkins",
-        "JUnit",
-        "Docker",
-        "SAP",
-        "Okta",
-      ],
-    },
-
-    {
-      company: "CJSS Technologies Private Ltd",
-      location: "Hyderabad",
-      position: "Junior Java Developer Intern",
-      period: "Feb 2024 – Mar 2024",
-
-      responsibilities: [
-        "Assisted in backend development using Java and Spring Boot",
-        "Developed microservices and integrated JPA for database operations",
-        "Built frontend components using React JS",
-        "Worked with MySQL for optimized relational data handling",
-      ],
-
-      technologies: [
-        "Java",
-        "Spring Boot",
-        "ReactJS",
-        "MySQL",
-        "SAP Hybris",
-      ],
-    },
-
-    {
-      company: "Abhi Trainings.Org",
-      location: "Hyderabad",
-      position: "AWS Intern",
-      period: "Sep 2023 – Dec 2023",
-
-      responsibilities: [
-        "Worked on enterprise-grade Java applications using Spring Boot and React JS",
-        "Containerized microservices using Docker and deployed on AWS ECS",
-        "Implemented CI/CD pipelines using Jenkins",
-        "Integrated AWS S3 and IAM for secure cloud infrastructure",
-        "Worked in Linux environments for scripting and automation",
-      ],
-
-      technologies: [
-        "Java",
-        "Spring Boot",
-        "ReactJS",
-        "MySQL",
-        "Docker",
-        "AWS ECS",
-        "AWS S3",
-        "IAM",
-        "Jenkins",
-        "Linux",
-      ],
-    },
-  ];
-
   return (
-    <section
-      id="experience"
-      className="py-24 bg-gradient-to-b from-gray-50 to-white"
-      style={{ fontFamily: "'serif', sans-serif" }}
-    >
-      <div className="container mx-auto px-6 max-w-7xl">
-        {/* Heading */}
-        <div className="text-center mb-20">
-          <h2 className="text-5xl font-bold text-gray-900 mb-5">
-            Work Experience
-          </h2>
+    <section id="experience" className="scroll-mt-16 bg-white py-20 sm:py-24">
+      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
+          <div>
+            <p className="section-kicker">Experience</p>
+            <h2 className="section-title">Building systems that hold up in production.</h2>
+            <p className="section-copy">
+              Nearly three years delivering enterprise commerce platforms for Changi Airport Group, from requirements and integrations through deployment and root-cause analysis.
+            </p>
 
-          <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-6"></div>
-
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-8">
-            Professional experience building scalable enterprise systems,
-            cloud-native applications, and high-performance backend solutions.
-          </p>
-        </div>
-
-        {/* Experience Cards */}
-        <div className="space-y-10">
-          {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="group bg-white border border-gray-200 rounded-3xl p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
-            >
-              {/* Top Header */}
-              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-8">
+            <div className="mt-8 rounded-lg border border-slate-200 bg-slate-50 p-5">
+              <div className="flex items-start gap-3">
+                <FaBuilding className="mt-1 text-blue-700" aria-hidden="true" />
                 <div>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-700 flex items-center justify-center text-2xl">
-                      <FaBriefcase />
-                    </div>
-
-                    <div>
-                      <h3 className="text-3xl font-bold text-gray-800">
-                        {exp.position}
-                      </h3>
-
-                      <p className="text-gray-500 text-lg mt-1 flex items-center gap-2">
-                        <FaBuilding className="text-blue-600" />
-                        {exp.company}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap gap-6 text-gray-600 text-[16px]">
-                    <p className="flex items-center gap-2">
-                      <FaMapMarkerAlt className="text-blue-600" />
-                      {exp.location}
-                    </p>
-
-                    <p className="flex items-center gap-2">
-                      <FaCalendarAlt className="text-blue-600" />
-                      {exp.period}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Client Info */}
-              {exp.client && (
-                <div className="grid md:grid-cols-3 gap-4 mb-8">
-                  <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5">
-                    <p className="text-gray-500 text-sm mb-1">Client</p>
-                    <h4 className="font-semibold text-gray-800">
-                      {exp.client}
-                    </h4>
-                  </div>
-
-                  <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5">
-                    <p className="text-gray-500 text-sm mb-1">Project</p>
-                    <h4 className="font-semibold text-gray-800">
-                      {exp.project}
-                    </h4>
-                  </div>
-
-                  <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5">
-                    <p className="text-gray-500 text-sm mb-1">Role</p>
-                    <h4 className="font-semibold text-gray-800">
-                      {exp.role}
-                    </h4>
-                  </div>
-                </div>
-              )}
-
-              {/* Description */}
-              {exp.description && (
-                <p className="text-gray-600 leading-8 mb-8 text-[17px]">
-                  {exp.description}
-                </p>
-              )}
-
-              {/* Responsibilities */}
-              <div className="mb-10">
-                <h4 className="text-2xl font-bold text-gray-800 mb-5">
-                  Key Responsibilities
-                </h4>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  {exp.responsibilities.map((responsibility, i) => (
-                    <div
-                      key={i}
-                      className="flex items-start gap-3 bg-gray-50 border border-gray-200 rounded-2xl p-4 hover:bg-blue-50 transition duration-300"
-                    >
-                      <FaCode className="text-blue-600 mt-1 shrink-0" />
-
-                      <p className="text-gray-700 leading-7">
-                        {responsibility}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Technologies */}
-              <div>
-                <h4 className="text-2xl font-bold text-gray-800 mb-5">
-                  Technologies Used
-                </h4>
-
-                <div className="flex flex-wrap gap-4">
-                  {exp.technologies.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-5 py-3 rounded-2xl bg-gray-50 border border-gray-200 text-gray-700 font-medium hover:bg-gray-100 transition duration-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  <p className="font-bold text-slate-900">CJSS Technologies Pvt. Ltd.</p>
+                  <p className="mt-1 flex items-center gap-2 text-sm text-slate-600">
+                    <FaMapMarkerAlt aria-hidden="true" /> Hyderabad, India
+                  </p>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
+
+          <div className="relative border-l-2 border-slate-200 pl-6 sm:pl-9">
+            {roles.map((role, index) => (
+              <article key={role.project} className={index === roles.length - 1 ? "relative" : "relative pb-12"}>
+                <span className="absolute -left-[2.05rem] top-1.5 h-4 w-4 rounded-full border-4 border-white bg-blue-700 sm:-left-[2.8rem]" aria-hidden="true" />
+                <p className="text-sm font-bold text-blue-700">{role.period}</p>
+                <h3 className="mt-2 text-2xl font-bold text-slate-950">{role.title}</h3>
+                <p className="mt-1 text-sm font-semibold text-slate-500">Client: Changi Airport Group | {role.project}</p>
+
+                <ul className="mt-5 space-y-3">
+                  {role.points.map((point) => (
+                    <li key={point} className="flex items-start gap-3 text-[15px] leading-7 text-slate-600">
+                      <FaCheck className="mt-1.5 shrink-0 text-blue-700" aria-hidden="true" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {role.technologies.map((technology) => (
+                    <span key={technology} className="rounded-md border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700">
+                      {technology}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
