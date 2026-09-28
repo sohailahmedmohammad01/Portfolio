@@ -42,7 +42,7 @@ function Header() {
       </div>
       {menuOpen && <nav className="mobile-nav" id="mobile-menu" aria-label="Mobile navigation">
         {navigation.map((item) => <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>{item.label}<FiArrowRight aria-hidden="true" /></a>)}
-        <a href="/docs/resume.pdf" download onClick={() => setMenuOpen(false)}>Download résumé <FiDownload aria-hidden="true" /></a>
+        <a href={`${import.meta.env.BASE_URL}docs/resume.pdf`} download onClick={() => setMenuOpen(false)}>Download résumé <FiDownload aria-hidden="true" /></a>
       </nav>}
     </header>
   );
@@ -58,7 +58,7 @@ function Hero() {
       <div className="hero-specialties"><span>BACKEND</span><i /><span>COMMERCE</span><i /><span>APPLIED AI</span></div>
       <div className="hero-actions">
         <a className="button button-dark" href="#work">Explore my work <FiArrowRight aria-hidden="true" /></a>
-        <a className="button button-text" href="/docs/resume.pdf" download>Download résumé <FiDownload aria-hidden="true" /></a>
+        <a className="button button-text" href={`${import.meta.env.BASE_URL}docs/resume.pdf`} download>Download résumé <FiDownload aria-hidden="true" /></a>
       </div>
       <a className="scroll-cue" href="#about"><FiArrowDown aria-hidden="true" /> DISCOVER MY JOURNEY</a>
     </div>
@@ -215,7 +215,7 @@ function Contact() {
     <div className="contact-top"><span>08 / LET&apos;S CONNECT</span><span>HAVE AN IDEA OR OPPORTUNITY?</span></div>
     <h2>Let&apos;s build something <em>meaningful.</em></h2>
     <a className="contact-email" href="mailto:sohailahmed.mohammad01@gmail.com">sohailahmed.mohammad01@gmail.com <FiArrowRight aria-hidden="true" /></a>
-    <div className="contact-bottom"><div><a href="https://www.linkedin.com/in/mohammad-sohail-ahmed/" target="_blank" rel="noreferrer">LinkedIn <FiExternalLink aria-hidden="true" /></a><a href="tel:+918106637318">+91 81066 37318 <FiArrowRight aria-hidden="true" /></a><a href="/docs/resume.pdf" download>Download résumé <FiDownload aria-hidden="true" /></a></div><span>HYDERABAD, INDIA</span></div>
+    <div className="contact-bottom"><div><a href="https://www.linkedin.com/in/mohammad-sohail-ahmed/" target="_blank" rel="noreferrer">LinkedIn <FiExternalLink aria-hidden="true" /></a><a href="tel:+918106637318">+91 81066 37318 <FiArrowRight aria-hidden="true" /></a><a href={`${import.meta.env.BASE_URL}docs/resume.pdf`} download>Download résumé <FiDownload aria-hidden="true" /></a></div><span>HYDERABAD, INDIA</span></div>
     <div className="footer-fine"><span>© {new Date().getFullYear()} MOHAMMAD SOHAIL AHMED</span><span>DESIGNED WITH INTENTION · BUILT TO LAST</span><a href="#top">BACK TO TOP ↑</a></div>
   </div></footer>;
 }
