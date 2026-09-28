@@ -1,4 +1,5 @@
-import { FiArrowUpRight, FiAward, FiBookOpen, FiCloud, FiCode, FiCpu, FiDatabase, FiLayers, FiTool } from "react-icons/fi";
+import { FiArrowUpRight, FiAward, FiCloud, FiCode, FiCpu, FiDatabase, FiLayers, FiTool } from "react-icons/fi";
+import rguktLogo from "../images/rgukt-basar-logo.jpg";
 
 const profileUrl = "https://www.linkedin.com/in/mohammad-sohail-ahmed/";
 
@@ -28,7 +29,7 @@ export function EducationSection() {
   return <section className="education-section section-pad" id="education"><div className="shell">
     <div className="section-heading"><div className="section-index"><span>05</span><span>EDUCATION</span></div><h2>A foundation to<br /><em>keep building on.</em></h2></div>
     <div className="education-feature">
-      <div className="education-seal" aria-hidden="true"><FiBookOpen /><span>IIIT · RGUKT</span><small>BASAR</small></div>
+      <div className="education-logo"><img src={rguktLogo} alt="Rajiv Gandhi University of Knowledge Technologies Basar logo" width="500" height="500" loading="lazy" /></div>
       <div className="education-degree"><span className="mini-label">BACHELOR OF TECHNOLOGY · 2020–2024</span><h3>Computer Science<br />& Engineering</h3><p>Rajiv Gandhi University of Knowledge Technologies</p><span className="education-location">IIIT-RGUKT, Basar</span><div className="education-dates"><span>2020 <i /></span><span>Graduated May 2024</span></div></div>
       <div className="education-result"><span>ACADEMIC RESULT</span><strong>8.9<small>/10</small></strong><p>Grade Point Average</p><div><FiAward aria-hidden="true" /><span>Class of 2024</span></div></div>
     </div>

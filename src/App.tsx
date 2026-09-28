@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { FiArrowDown, FiArrowRight, FiArrowUpRight, FiCheck, FiCpu, FiDatabase, FiDownload, FiExternalLink, FiFileText, FiLayers, FiMenu, FiShield, FiX } from "react-icons/fi";
 import portrait from "./images/sohail-professional-portrait.png";
-import atWork from "./images/sohail-at-work.jpg";
 import awardMoment from "./images/cjss-award-moment.jpg";
 import phoenixAward from "./images/cjss-phoenix-award.jpg";
 import { CredentialsSection, EducationSection, SkillsSection } from "./components/ProfileDetails";
@@ -84,16 +83,18 @@ function About() {
   return <section className="about-section section-pad" id="about">
     <div className="shell">
       <div className="about-grid">
-        <div className="about-photo-wrap">
-          <div className="about-photo"><img src={atWork} alt="Mohammad Sohail Ahmed at work" loading="lazy" /></div>
-          <div className="about-photo-label"><span>THE PERSON BEHIND THE CODE</span><span>AT WORK</span></div>
-        </div>
-        <div className="about-content">
+        <div className="about-intro">
           <SectionHeading number="01" eyebrow="ABOUT ME" title="Thoughtful engineering. Tangible impact." />
           <p className="large-copy">I work at the intersection of robust backend architecture and useful new ideas.</p>
+        </div>
+        <div className="about-content">
           <p>At CJSS Technologies, I build and support enterprise commerce systems for Changi Airport Group. My work spans SAP Commerce Cloud, Java and Spring Boot services, AWS workflows, integrations, and the details that keep production systems reliable.</p>
           <p>Alongside client delivery, I explore applied AI through retrieval-augmented generation, vector search, and multi-agent systems. I value clear thinking, careful execution, and the people who make great work possible.</p>
-          <div className="about-tags"><span>BACKEND ENGINEERING</span><span>ENTERPRISE COMMERCE</span><span>APPLIED AI</span></div>
+          <div className="about-principles" aria-label="Areas of focus">
+            <div><span>01 / BUILD</span><strong>Backend systems</strong><small>Clear APIs and resilient services.</small></div>
+            <div><span>02 / DELIVER</span><strong>Commerce at scale</strong><small>From requirements to production support.</small></div>
+            <div><span>03 / EXPLORE</span><strong>Applied AI</strong><small>Grounded, useful intelligent workflows.</small></div>
+          </div>
         </div>
       </div>
     </div>
@@ -103,8 +104,7 @@ function About() {
 const experience = [
   {
     period: "AUG 2026 — PRESENT",
-    title: "Software Engineer",
-    client: "Changi Airport Group · iShopChangi",
+    project: "iShopChangi",
     summary: "Building and enhancing the backend of a large-scale SAP Commerce Cloud platform.",
     details: [
       "Deliver features across catalog, pricing, promotions, orders, customers, and checkout.",
@@ -116,8 +116,7 @@ const experience = [
   },
   {
     period: "JAN 2024 — JUL 2026",
-    title: "Software Engineer",
-    client: "Changi Airport Group · TREX Marketplace",
+    project: "TREX Marketplace",
     summary: "Delivered cloud-native services and integrations for core marketplace workflows.",
     details: [
       "Built Spring Boot microservices and REST and GraphQL APIs for products, pricing, orders, and merchant operations.",
@@ -134,15 +133,18 @@ function Experience() {
     <div className="shell">
       <div className="experience-top">
         <SectionHeading number="03" eyebrow="EXPERIENCE" title="Built for the real world." copy="From the first design discussion to production support, I focus on systems that are clear, resilient, and ready to scale." />
-        <div className="company-mark"><span className="company-mark-dot" /> CJSS TECHNOLOGIES <span>·</span> HYDERABAD</div>
       </div>
-      <div className="experience-list">
-        {experience.map((role, index) => <article className="experience-row" key={role.client}>
-          <div className="experience-side"><span className="experience-number">0{index + 1}</span><span className="experience-period">{role.period}</span></div>
-          <div className="experience-main"><p className="experience-client">{role.client}</p><h3>{role.title}</h3><p className="experience-summary">{role.summary}</p>
-            <ul>{role.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>
-            <p className="experience-stack">{role.stack}</p>
-          </div>
+      <div className="employer-overview">
+        <span className="experience-number">01</span>
+        <div><p className="experience-client">CJSS TECHNOLOGIES · HYDERABAD</p><h3>Software Engineer</h3></div>
+        <strong>JAN 2024 — PRESENT</strong>
+      </div>
+      <div className="project-phases">
+        {experience.map((role, index) => <article className="project-phase" key={role.project}>
+          <div className="project-phase-heading"><span>CHANGI AIRPORT GROUP / 0{index + 1}</span><span>{role.period}</span></div>
+          <h4>{role.project}</h4><p className="experience-summary">{role.summary}</p>
+          <ul>{role.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>
+          <p className="experience-stack">{role.stack}</p>
         </article>)}
       </div>
     </div>
