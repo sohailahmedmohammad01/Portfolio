@@ -37,7 +37,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="/docs/resume.pdf"
+            href={`${import.meta.env.BASE_URL}docs/resume.pdf`}
             download
             className="inline-flex h-10 items-center gap-2 rounded-lg bg-slate-950 px-4 text-sm font-semibold text-white transition hover:bg-blue-700"
           >
@@ -93,7 +93,7 @@ export default function Header() {
         </div>
 
         <a
-          href="/docs/resume.pdf"
+          href={`${import.meta.env.BASE_URL}docs/resume.pdf`}
           download
           className="mt-auto inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-slate-950 px-5 font-semibold text-white"
         >
