@@ -30,7 +30,7 @@ export default function About() {
               <FaArrowRight aria-hidden="true" />
             </a>
             <a
-              href="/docs/resume.pdf"
+              href={`${import.meta.env.BASE_URL}docs/resume.pdf`}
               download
               className="inline-flex h-12 items-center gap-2 rounded-lg border border-slate-300 bg-white px-5 text-sm font-semibold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50"
             >
