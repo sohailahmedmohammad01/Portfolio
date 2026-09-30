@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { FiArrowDown, FiArrowRight, FiArrowUpRight, FiCheck, FiCpu, FiDatabase, FiDownload, FiExternalLink, FiFileText, FiLayers, FiMenu, FiShield, FiX } from "react-icons/fi";
+import { Fragment, useEffect, useState } from "react";
+import { FiArrowDown, FiArrowRight, FiArrowUpRight, FiAward, FiCheck, FiCpu, FiDatabase, FiDownload, FiExternalLink, FiFileText, FiGrid, FiHome, FiLayers, FiMenu, FiShield, FiX } from "react-icons/fi";
 import portrait from "./images/sohail-professional-portrait.png";
 import awardMoment from "./images/cjss-award-moment.jpg";
 import phoenixAward from "./images/cjss-phoenix-award.jpg";
@@ -7,9 +7,9 @@ import { CredentialsSection, EducationSection, SkillsSection } from "./component
 
 const navigation = [
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Work", href: "#work" },
+  { label: "Skills", href: "#skills" },
   { label: "Education", href: "#education" },
   { label: "Credentials", href: "#credentials" },
   { label: "Recognition", href: "#recognition" },
@@ -54,7 +54,7 @@ function Hero() {
       <div className="eyebrow"><span className="eyebrow-line" /> BACKEND SOFTWARE ENGINEER</div>
       <h1>Mohammad<br /><em>Sohail Ahmed.</em></h1>
       <p className="hero-role">Engineering dependable systems.<br />Exploring intelligent possibilities.</p>
-      <p className="hero-intro">Java, Spring Boot, AWS, and SAP Commerce Cloud — with hands-on RAG and multi-agent experience. Based in Hyderabad, building for real-world impact.</p>
+      <p className="hero-intro">Java, Spring Boot, and AWS engineer specializing in TREX development and TREX–SAP Commerce Cloud integration, with hands-on experience in RAG and multi-agent AI systems. Based in Hyderabad, building scalable backend solutions and AI applications that deliver real-world impact.</p>
       <div className="hero-specialties"><span>BACKEND</span><i /><span>COMMERCE</span><i /><span>APPLIED AI</span></div>
       <div className="hero-actions">
         <a className="button button-dark" href="#work">Explore my work <FiArrowRight aria-hidden="true" /></a>
@@ -68,7 +68,7 @@ function Hero() {
       <div className="hero-photo-caption"><span>MOHAMMAD SOHAIL AHMED</span><span>HYDERABAD · INDIA</span></div>
       <div className="hero-accent" aria-hidden="true" />
     </div>
-  </div><div className="hero-proof-strip shell"><div><span>CURRENTLY</span><strong>Software Engineer at CJSS</strong></div><div><span>CLIENT DELIVERY</span><strong>Changi Airport Group</strong></div><div><span>RECOGNIZED FOR</span><strong>AI innovation & client impact</strong></div></div></section>;
+  </div><div className="hero-proof-strip shell"><div><span>CURRENTLY</span><strong>Software Engineer at CJSS</strong></div><div><span>CLIENT DELIVERY</span><strong>Changi Airport Group</strong></div><div><span>BUILDING</span><strong>Zaiqa hospitality platform</strong></div><div><span>RECOGNIZED FOR</span><strong className="proof-award"><FiAward aria-hidden="true" />AI Innovation & Client Recognition</strong></div></div></section>;
 }
 
 function SectionHeading({ number, eyebrow, title, copy }: { number: string; eyebrow: string; title: string; copy?: string }) {
@@ -88,11 +88,11 @@ function About() {
           <p className="large-copy">I work at the intersection of robust backend architecture and useful new ideas.</p>
         </div>
         <div className="about-content">
-          <p>At CJSS Technologies, I build and support enterprise commerce systems for Changi Airport Group. My work spans SAP Commerce Cloud, Java and Spring Boot services, AWS workflows, integrations, and the details that keep production systems reliable.</p>
-          <p>Alongside client delivery, I explore applied AI through retrieval-augmented generation, vector search, and multi-agent systems. I value clear thinking, careful execution, and the people who make great work possible.</p>
+          <p>At CJSS Technologies, I build and support TREX, Changi Airport Group&apos;s cloud-native marketplace platform. My work spans Java and Spring Boot services, AWS workflows, the TREX–SAP Commerce Cloud integration for iShopChangi, DocuSign merchant onboarding, and the details that keep production systems reliable.</p>
+          <p>Outside client delivery, I&apos;m building Zaiqa, a hospitality operations platform, and exploring applied AI through retrieval-augmented generation, vector search, and multi-agent systems. I value clear thinking, careful execution, and the people who make great work possible.</p>
           <div className="about-principles" aria-label="Areas of focus">
             <div><span>01 / BUILD</span><strong>Backend systems</strong><small>Clear APIs and resilient services.</small></div>
-            <div><span>02 / DELIVER</span><strong>Commerce at scale</strong><small>From requirements to production support.</small></div>
+            <div><span>02 / DELIVER</span><strong>Integrations at scale</strong><small>From requirements to production support.</small></div>
             <div><span>03 / EXPLORE</span><strong>Applied AI</strong><small>Grounded, useful intelligent workflows.</small></div>
           </div>
         </div>
@@ -103,28 +103,30 @@ function About() {
 
 const experience = [
   {
-    period: "AUG 2026 — PRESENT",
-    project: "iShopChangi",
-    summary: "Building and enhancing the backend of a large-scale SAP Commerce Cloud platform.",
-    details: [
-      "Deliver features across catalog, pricing, promotions, orders, customers, and checkout.",
-      "Translate requirements into OCC APIs, custom extensions, items.xml models, populators, converters, and commerce processes.",
-      "Own FlexibleSearch, ImpEx, Solr, CronJobs, catalog synchronization, and Backoffice operations.",
-      "Troubleshoot incidents across application layers and validate releases through to production.",
+    period: "JAN 2024 — PRESENT",
+    project: "TREX — Cloud-Native Marketplace Platform",
+    summary: "Developing and supporting cloud-native backend services for products, pricing, orders, merchants, contracts, users, and promotions.",
+    achievements: [
+      {
+        tag: "SOLE OWNER  /  CLIENT RECOGNIZED",
+        title: "DocuSign merchant onboarding",
+        text: "Single-handedly designed, integrated, and delivered the DocuSign digital-signature flow end to end. 200+ merchants have onboarded to TREX through digitized merchant agreements with pre-populated terms and values — recognized by Changi Airport Group.",
+      },
+      {
+        tag: "PROOF OF CONCEPT",
+        title: "Observability platform selection",
+        text: "Evaluated Datadog and Dynatrace through a hands-on POC and recommended the platform for simpler, centralized application logging and monitoring.",
+      },
     ],
-    stack: "JAVA  /  SPRING  /  SAP COMMERCE CLOUD  /  SOLR",
-  },
-  {
-    period: "JAN 2024 — JUL 2026",
-    project: "TREX Marketplace",
-    summary: "Delivered cloud-native services and integrations for core marketplace workflows.",
     details: [
-      "Built Spring Boot microservices and REST and GraphQL APIs for products, pricing, orders, and merchant operations.",
-      "Developed AWS Lambda and AppSync workflows and Dockerized ECS services backed by DynamoDB and relational data; integrated SAP and Okta.",
-      "Investigated production issues with distributed tracing, Dynatrace, and Datadog; optimized backend and database paths and validated releases.",
-      "Built JUnit and Mockito tests, used AI tools for testing, refactoring, documentation, and PR checks, and mentored junior engineers through reviews and debugging.",
+      "Integrated TREX with SAP Commerce Cloud for iShopChangi, covering catalog synchronization, pricing, promotions, and order data exchange.",
+      "Built and maintained Java and Spring Boot microservices, REST and GraphQL APIs, and marketplace business logic.",
+      "Worked with AWS Lambda, AppSync, ECS, and DynamoDB to support cloud-native services and system integrations.",
+      "Resolved production defects across backend services, integrations, and database operations.",
+      "Troubleshot backend and database bottlenecks using Datadog and Dynatrace and supported performance optimization.",
+      "Wrote JUnit and Mockito tests, supported regression testing, and validated releases before production.",
     ],
-    stack: "SPRING BOOT  /  AWS  /  ECS  /  DYNAMODB",
+    stack: "JAVA  /  SPRING BOOT  /  AWS  /  DYNAMODB  /  SAP COMMERCE CLOUD  /  DOCUSIGN  /  GRAPHQL",
   },
 ];
 
@@ -132,7 +134,7 @@ function Experience() {
   return <section className="experience-section section-pad" id="experience">
     <div className="shell">
       <div className="experience-top">
-        <SectionHeading number="03" eyebrow="EXPERIENCE" title="Built for the real world." copy="From the first design discussion to production support, I focus on systems that are clear, resilient, and ready to scale." />
+        <SectionHeading number="02" eyebrow="EXPERIENCE" title="Built for the real world." copy="From the first design discussion to production support, I focus on systems that are clear, resilient, and ready to scale." />
       </div>
       <div className="employer-overview">
         <span className="experience-number">01</span>
@@ -143,6 +145,9 @@ function Experience() {
         {experience.map((role, index) => <article className="project-phase" key={role.project}>
           <div className="project-phase-heading"><span>CHANGI AIRPORT GROUP / 0{index + 1}</span><span>{role.period}</span></div>
           <h4>{role.project}</h4><p className="experience-summary">{role.summary}</p>
+          <div className="project-achievements" aria-label="Key achievements">{role.achievements.map((item) => <div key={item.title}>
+            <span>{item.tag}</span><strong>{item.title}</strong><p>{item.text}</p>
+          </div>)}</div>
           <ul>{role.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>
           <p className="experience-stack">{role.stack}</p>
         </article>)}
@@ -154,37 +159,58 @@ function Experience() {
 const work = [
   {
     number: "01",
+    label: "BUILDING NOW  /  HOSPITALITY SAAS",
+    title: "Zaiqa",
+    description: "A multi-site hospitality operations platform that runs hotel PMS and restaurant operations — rooms, stays, folios, menus, orders, tables, housekeeping, inventory, billing, and reporting — from one system.",
+    detail: "A Spring Boot modular monolith with 14 domain modules whose boundaries are verified by Spring Modulith, branch-scoped JWT and RBAC across seven roles, Flyway-managed PostgreSQL, and a React and TypeScript operations UI.",
+    tools: ["JAVA 21", "SPRING BOOT", "SPRING MODULITH", "POSTGRESQL", "REACT"],
+    system: "system-featured",
+    flow: [[FiHome, "Hotel PMS"], [FiGrid, "Restaurant ops"], [FiLayers, "Billing & reports"]] as const,
+    footer: "Modular · Multi-branch · Role-scoped",
+    ariaLabel: "Zaiqa platform: hotel PMS and restaurant operations flowing into billing and reports",
+    featured: true,
+  },
+  {
+    number: "02",
     label: "INDEPENDENT PROJECT  /  APPLIED AI",
     title: "Multi-Agent RAG Platform",
     description: "An AI assistant architecture that connects document ingestion, embeddings, semantic retrieval, and grounded response generation across specialized agents.",
     detail: "Built with Spring Boot and FastAPI, using Gemini, Qdrant vector search, metadata filtering, and role-based access control.",
     tools: ["SPRING BOOT", "FASTAPI", "QDRANT", "GEMINI"],
+    system: "system-01",
+    flow: [[FiFileText, "Documents"], [FiCpu, "Retrieval"], [FiLayers, "Grounded answers"]] as const,
+    footer: "Context-aware · Access-controlled",
+    ariaLabel: "RAG flow: documents, retrieval, and grounded answers",
   },
   {
-    number: "02",
+    number: "03",
     label: "ENGINEERING PROJECT  /  HEALTHCARE",
     title: "Healthcare Information System",
     description: "A modular backend for patient registration, appointments, billing, pharmacy, laboratory, administration, and audit logging.",
     detail: "Designed relational data models and secure workflows with JWT and role-based access, plus validation and deployment troubleshooting.",
     tools: ["JAVA", "SPRING BOOT", "POSTGRESQL", "JWT / RBAC"],
+    system: "system-02",
+    flow: [[FiFileText, "Patients"], [FiCpu, "Services"], [FiShield, "Secure records"]] as const,
+    footer: "Modular · Auditable · Role-based",
+    ariaLabel: "Healthcare system: patient workflows, services, and secure data",
   },
 ];
 
 function Work() {
   return <section className="work-section section-pad" id="work">
     <div className="shell">
-      <div className="work-top"><SectionHeading number="04" eyebrow="SELECTED WORK" title="Ideas into architecture." copy="Systems that connect careful engineering with practical problems — from intelligent retrieval to healthcare and property workflows." /><span className="work-count">THREE SELECTED PROJECTS</span></div>
-      <div className="work-grid">{work.map((project) => <article className="work-card" key={project.number}>
+      <div className="work-top"><SectionHeading number="03" eyebrow="SELECTED WORK" title="Ideas into architecture." copy="Systems that connect careful engineering with practical problems — from hospitality operations and intelligent retrieval to healthcare and property workflows." /><span className="work-count">FOUR SELECTED PROJECTS</span></div>
+      <div className="work-grid">{work.map((project) => <article className={"work-card" + (project.featured ? " work-card-featured" : "")} key={project.number}>
         <div className="work-card-top"><span>{project.label}</span><span className="work-card-number">{project.number}</span></div>
-        <div className={"project-system system-" + project.number} aria-label={project.number === "01" ? "RAG flow: documents, retrieval, and grounded answers" : "Healthcare system: patient workflows, services, and secure data"}>
+        <div className={"project-system " + project.system} aria-label={project.ariaLabel}>
           <span className="system-label">SYSTEM OVERVIEW</span>
-          <div className="system-flow"><span><FiFileText aria-hidden="true" /><small>{project.number === "01" ? "Documents" : "Patients"}</small></span><i /><span><FiCpu aria-hidden="true" /><small>{project.number === "01" ? "Retrieval" : "Services"}</small></span><i /><span>{project.number === "01" ? <FiLayers aria-hidden="true" /> : <FiShield aria-hidden="true" />}<small>{project.number === "01" ? "Grounded answers" : "Secure records"}</small></span></div>
-          <div className="system-footer"><FiCheck aria-hidden="true" />{project.number === "01" ? "Context-aware · Access-controlled" : "Modular · Auditable · Role-based"}</div>
+          <div className="system-flow">{project.flow.map(([Icon, text], i) => <Fragment key={text}>{i > 0 && <i />}<span><Icon aria-hidden="true" /><small>{text}</small></span></Fragment>)}</div>
+          <div className="system-footer"><FiCheck aria-hidden="true" />{project.footer}</div>
         </div>
         <div className="work-card-body"><h3>{project.title}</h3><p>{project.description}</p><p className="work-detail">{project.detail}</p></div>
         <div className="work-card-bottom">{project.tools.map((tool) => <span key={tool}>{tool}</span>)}</div>
       </article>)}</div>
-      <article className="project-supporting"><span className="project-supporting-icon"><FiDatabase aria-hidden="true" /></span><div><span className="mini-label">03 / MARCH–APRIL 2024</span><h3>Real Estate Platform</h3><p>A Spring Boot microservices application for property listings, user management, orders, and appointment scheduling.</p></div><a className="text-link" href="https://www.linkedin.com/in/mohammad-sohail-ahmed/" target="_blank" rel="noreferrer">Project on LinkedIn <FiArrowUpRight aria-hidden="true" /></a></article>
+      <article className="project-supporting"><span className="project-supporting-icon"><FiDatabase aria-hidden="true" /></span><div><span className="mini-label">04 / MARCH–APRIL 2024</span><h3>Real Estate Platform</h3><p>A Spring Boot microservices application for property listings, user management, orders, and appointment scheduling.</p></div><a className="text-link" href="https://www.linkedin.com/in/mohammad-sohail-ahmed/" target="_blank" rel="noreferrer">Project on LinkedIn <FiArrowUpRight aria-hidden="true" /></a></article>
     </div>
   </section>;
 }
@@ -198,7 +224,8 @@ function Recognition() {
         <p className="recognition-lead">Alhamdulillah — I&apos;m grateful to receive Best Employee recognition at CJSS Technologies for my contribution to AI innovation and client projects.</p>
         <p>The award reflects the guidance, trust, and collaboration of the leadership, managers, mentors, and teammates I&apos;ve learned from. Every challenge and review has helped me grow as an engineer.</p>
         <p>It motivates me to keep experimenting, learning, and creating meaningful impact for CJSS and its clients.</p>
-        <div className="recognition-contributions"><span>CLIENT DELIVERY</span><span>RAG SOLUTIONS</span><span>MULTI-AGENT ORCHESTRATION</span></div>
+        <div className="recognition-contributions"><span>CLIENT DELIVERY</span><span>DOCUSIGN INTEGRATION</span><span>RAG SOLUTIONS</span><span>MULTI-AGENT ORCHESTRATION</span></div>
+        <div className="client-recognition"><span className="mini-label">CLIENT RECOGNITION · CHANGI AIRPORT GROUP</span><h3>DocuSign merchant onboarding</h3><p>Recognized by Changi Airport Group for single-handedly delivering the DocuSign digital-signature onboarding flow for TREX, which has onboarded 200+ merchants through digitized, pre-populated merchant agreements.</p></div>
         <a className="text-link award-certificate-link" href={phoenixAward} target="_blank" rel="noreferrer">View award & certificate <FiArrowUpRight aria-hidden="true" /></a>
         <div className="award-credit">MOHAMMAD SOHAIL AHMED <span>·</span> CJSS TECHNOLOGIES</div>
       </div>
@@ -221,5 +248,5 @@ function Contact() {
 }
 
 export default function App() {
-  return <div className="site-page"><a className="skip-link" href="#about">Skip to content</a><Header /><main><Hero /><About /><SkillsSection /><Experience /><Work /><EducationSection /><CredentialsSection /><Recognition /></main><Contact /></div>;
+  return <div className="site-page"><a className="skip-link" href="#about">Skip to content</a><Header /><main><Hero /><About /><Experience /><Work /><SkillsSection /><EducationSection /><CredentialsSection /><Recognition /></main><Contact /></div>;
 }
