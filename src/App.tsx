@@ -88,7 +88,7 @@ function About() {
           <p className="large-copy">I work at the intersection of robust backend architecture and useful new ideas.</p>
         </div>
         <div className="about-content">
-          <p>At CJSS Technologies, I build and support TREX, Changi Airport Group&apos;s cloud-native marketplace platform. My work spans Java and Spring Boot services, AWS workflows, the TREX–SAP Commerce Cloud integration for iShopChangi, DocuSign merchant onboarding, and the details that keep production systems reliable.</p>
+          <p>At CJSS Technologies, I build and support TREX, Changi Airport Group&apos;s cloud-native marketplace platform. My work spans Java and Spring Boot services, AWS workflows, the TREX–SAP Commerce Cloud integration for iShopChangi, DocuSign Merchant Onboarding, and the details that keep production systems reliable.</p>
           <p>Outside client delivery, I&apos;m building Zaiqa, a hospitality operations platform, and exploring applied AI through retrieval-augmented generation, vector search, and multi-agent systems. I value clear thinking, careful execution, and the people who make great work possible.</p>
           <div className="about-principles" aria-label="Areas of focus">
             <div><span>01 / BUILD</span><strong>Backend systems</strong><small>Clear APIs and resilient services.</small></div>
@@ -109,7 +109,7 @@ const experience = [
     achievements: [
       {
         tag: "SOLE OWNER  /  CLIENT RECOGNIZED",
-        title: "DocuSign merchant onboarding",
+        title: "DocuSign Merchant Onboarding",
         text: "Single-handedly designed, integrated, and delivered the DocuSign digital-signature flow end to end. 200+ merchants have onboarded to TREX through digitized merchant agreements with pre-populated terms and values — recognized by Changi Airport Group.",
       },
       {
@@ -225,7 +225,7 @@ function Recognition() {
         <p>The award reflects the guidance, trust, and collaboration of the leadership, managers, mentors, and teammates I&apos;ve learned from. Every challenge and review has helped me grow as an engineer.</p>
         <p>It motivates me to keep experimenting, learning, and creating meaningful impact for CJSS and its clients.</p>
         <div className="recognition-contributions"><span>CLIENT DELIVERY</span><span>DOCUSIGN INTEGRATION</span><span>RAG SOLUTIONS</span><span>MULTI-AGENT ORCHESTRATION</span></div>
-        <div className="client-recognition"><span className="mini-label">CLIENT RECOGNITION · CHANGI AIRPORT GROUP</span><h3>DocuSign merchant onboarding</h3><p>Recognized by Changi Airport Group for single-handedly delivering the DocuSign digital-signature onboarding flow for TREX, which has onboarded 200+ merchants through digitized, pre-populated merchant agreements.</p></div>
+        <div className="client-recognition"><span className="mini-label">CLIENT RECOGNITION · CHANGI AIRPORT GROUP</span><h3>DocuSign Merchant Onboarding</h3><p>Recognized by Changi Airport Group for single-handedly delivering the DocuSign digital-signature onboarding flow for TREX, which has onboarded 200+ merchants through digitized, pre-populated merchant agreements.</p></div>
         <a className="text-link award-certificate-link" href={phoenixAward} target="_blank" rel="noreferrer">View award & certificate <FiArrowUpRight aria-hidden="true" /></a>
         <div className="award-credit">MOHAMMAD SOHAIL AHMED <span>·</span> CJSS TECHNOLOGIES</div>
       </div>
