@@ -64,7 +64,7 @@ function Hero() {
     </div>
     <div className="hero-visual">
       <div className="hero-image-frame"><img src={portrait} alt="Professional portrait of Mohammad Sohail Ahmed in a black suit" width="1122" height="1402" fetchPriority="high" /></div>
-      <a className="hero-award-note" href="#recognition"><span aria-hidden="true">✳</span><span><strong>CJSS Phoenix Award</strong><small>RECOGNITION · 2026</small></span><FiArrowRight aria-hidden="true" /></a>
+      <a className="hero-award-note" href="#recognition"><span aria-hidden="true">✳</span><span><strong>Best Employee Phoenix Award</strong><small>RECOGNITION · 2026</small></span><FiArrowRight aria-hidden="true" /></a>
       <div className="hero-photo-caption"><span>MOHAMMAD SOHAIL AHMED</span><span>HYDERABAD · INDIA</span></div>
       <div className="hero-accent" aria-hidden="true" />
     </div>
@@ -104,9 +104,14 @@ function About() {
 const experience = [
   {
     period: "JAN 2024 — PRESENT",
-    project: "TREX — Cloud-Native Marketplace Platform",
+    project: "TREX — Cloud-Native Marketplace Platform for iShopChangi",
     summary: "Developing and supporting cloud-native backend services for products, pricing, orders, merchants, contracts, users, and promotions.",
     achievements: [
+      {
+        tag: "TREX LEAD  /  GO-LIVE 10 NOV 2026",
+        title: "Beverage Container Return Scheme (BCRS)",
+        text: "Leading TREX-side design and development of Singapore's Beverage Container Return Scheme across TREX and iShopChangi — from requirements with the business team to eligible-product flagging, the deposit as a separate price and order line item, refund logic, invoice changes, and TREX-to-SAP Commerce sync. Covers every eligible beverage, wine, and pharmacy product across all Changi merchants; the end-to-end demo was well received by the business team.",
+      },
       {
         tag: "SOLE OWNER  /  CLIENT RECOGNIZED",
         title: "DocuSign Merchant Onboarding",
@@ -128,6 +133,19 @@ const experience = [
     ],
     stack: "JAVA  /  SPRING BOOT  /  AWS  /  DYNAMODB  /  SAP COMMERCE CLOUD  /  DOCUSIGN  /  GRAPHQL",
   },
+  {
+    period: "JAN 2024 — PRESENT",
+    project: "iShopChangi (ISC) — E-commerce on SAP Commerce Cloud",
+    summary: "Building and supporting the SAP Commerce Cloud storefront backend that TREX powers — catalog, pricing, promotions, checkout, and orders.",
+    achievements: [],
+    details: [
+      "Build OCC APIs, custom extensions, items.xml models, and populators/converters from business requirements.",
+      "Deliver the iShopChangi side of BCRS: deposit pricing, order lines, refunds, and invoices for eligible products.",
+      "Work with FlexibleSearch, ImpEx, Solr, CronJobs, catalog synchronization, and Backoffice.",
+      "Troubleshoot cross-layer incidents between TREX and SAP Commerce and validate releases.",
+    ],
+    stack: "JAVA  /  SPRING  /  SAP COMMERCE CLOUD  /  OCC  /  SOLR  /  IMPEX  /  FLEXIBLESEARCH",
+  },
 ];
 
 function Experience() {
@@ -145,9 +163,9 @@ function Experience() {
         {experience.map((role, index) => <article className="project-phase" key={role.project}>
           <div className="project-phase-heading"><span>CHANGI AIRPORT GROUP / 0{index + 1}</span><span>{role.period}</span></div>
           <h4>{role.project}</h4><p className="experience-summary">{role.summary}</p>
-          <div className="project-achievements" aria-label="Key achievements">{role.achievements.map((item) => <div key={item.title}>
+          {role.achievements.length > 0 && <div className="project-achievements" aria-label="Key achievements">{role.achievements.map((item) => <div key={item.title}>
             <span>{item.tag}</span><strong>{item.title}</strong><p>{item.text}</p>
-          </div>)}</div>
+          </div>)}</div>}
           <ul>{role.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>
           <p className="experience-stack">{role.stack}</p>
         </article>)}
@@ -184,9 +202,9 @@ const work = [
   },
   {
     number: "03",
-    label: "ENGINEERING PROJECT  /  HEALTHCARE",
-    title: "Healthcare Information System",
-    description: "A modular backend for patient registration, appointments, billing, pharmacy, laboratory, administration, and audit logging.",
+    label: "FREELANCE  /  SMART SOFTECH SOLUTIONS",
+    title: "SmartHIS",
+    description: "A healthcare information system for Smart Softech Solutions, where I work as a freelance backend developer: a modular backend for patient registration, appointments, billing, pharmacy, laboratory, administration, and audit logging.",
     detail: "Designed relational data models and secure workflows with JWT and role-based access, plus validation and deployment troubleshooting.",
     tools: ["JAVA", "SPRING BOOT", "POSTGRESQL", "JWT / RBAC"],
     system: "system-02",
@@ -220,7 +238,7 @@ function Recognition() {
     <div className="shell recognition-grid">
       <div className="recognition-copy">
         <SectionHeading number="07" eyebrow="RECOGNITION" title="A moment of gratitude. A reason to aim higher." />
-        <div className="award-line"><span className="award-star">✳</span><span>PHOENIX AWARD <i /> JUNE 2026</span></div>
+        <div className="award-line"><span className="award-star">✳</span><span>BEST EMPLOYEE PHOENIX AWARD <i /> 2026</span></div>
         <p className="recognition-lead">Alhamdulillah — I&apos;m grateful to receive Best Employee recognition at CJSS Technologies for my contribution to AI innovation and client projects.</p>
         <p>The award reflects the guidance, trust, and collaboration of the leadership, managers, mentors, and teammates I&apos;ve learned from. Every challenge and review has helped me grow as an engineer.</p>
         <p>It motivates me to keep experimenting, learning, and creating meaningful impact for CJSS and its clients.</p>
@@ -230,7 +248,7 @@ function Recognition() {
         <div className="award-credit">MOHAMMAD SOHAIL AHMED <span>·</span> CJSS TECHNOLOGIES</div>
       </div>
       <div className="recognition-photos">
-        <figure className="award-main-photo"><img src={phoenixAward} alt="CJSS Technologies Phoenix Award and certificate of excellence awarded to Mohammad Sohail Ahmed" loading="lazy" /><figcaption>THE PHOENIX AWARD · EMPLOYEE OF THE MONTH</figcaption></figure>
+        <figure className="award-main-photo"><img src={phoenixAward} alt="CJSS Technologies Phoenix Award and certificate of excellence awarded to Mohammad Sohail Ahmed" loading="lazy" /><figcaption>BEST EMPLOYEE PHOENIX AWARD · 2026</figcaption></figure>
         <figure className="award-moment-photo"><div className="award-moment-crop"><img src={awardMoment} alt="Mohammad Sohail Ahmed receiving the CJSS recognition award with colleagues" loading="lazy" /></div><figcaption>A SHARED MOMENT AT CJSS</figcaption></figure>
       </div>
     </div>
