@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import { FiArrowDown, FiArrowRight, FiArrowUpRight, FiAward, FiCheck, FiCpu, FiDatabase, FiDownload, FiExternalLink, FiFileText, FiGrid, FiHome, FiLayers, FiMenu, FiShield, FiX } from "react-icons/fi";
+import { FiArrowDown, FiArrowRight, FiArrowUpRight, FiAward, FiCheck, FiCpu, FiDownload, FiExternalLink, FiFileText, FiGrid, FiHome, FiLayers, FiMenu, FiShield, FiX } from "react-icons/fi";
 import portrait from "./images/sohail-professional-portrait.png";
 import awardMoment from "./images/cjss-award-moment.jpg";
 import phoenixAward from "./images/cjss-phoenix-award.jpg";
@@ -217,7 +217,7 @@ const work = [
 function Work() {
   return <section className="work-section section-pad" id="work">
     <div className="shell">
-      <div className="work-top"><SectionHeading number="03" eyebrow="SELECTED WORK" title="Ideas into architecture." copy="Systems that connect careful engineering with practical problems — from hospitality operations and intelligent retrieval to healthcare and property workflows." /><span className="work-count">FOUR SELECTED PROJECTS</span></div>
+      <div className="work-top"><SectionHeading number="03" eyebrow="SELECTED WORK" title="Ideas into architecture." copy="Systems that connect careful engineering with practical problems — from hospitality operations and intelligent retrieval to healthcare." /><span className="work-count">THREE SELECTED PROJECTS</span></div>
       <div className="work-grid">{work.map((project) => <article className={"work-card" + (project.featured ? " work-card-featured" : "")} key={project.number}>
         <div className="work-card-top"><span>{project.label}</span><span className="work-card-number">{project.number}</span></div>
         <div className={"project-system " + project.system} aria-label={project.ariaLabel}>
@@ -228,7 +228,6 @@ function Work() {
         <div className="work-card-body"><h3>{project.title}</h3><p>{project.description}</p><p className="work-detail">{project.detail}</p></div>
         <div className="work-card-bottom">{project.tools.map((tool) => <span key={tool}>{tool}</span>)}</div>
       </article>)}</div>
-      <article className="project-supporting"><span className="project-supporting-icon"><FiDatabase aria-hidden="true" /></span><div><span className="mini-label">04 / MARCH–APRIL 2024</span><h3>Real Estate Platform</h3><p>A Spring Boot microservices application for property listings, user management, orders, and appointment scheduling.</p></div><a className="text-link" href="https://www.linkedin.com/in/mohammad-sohail-ahmed/" target="_blank" rel="noreferrer">Project on LinkedIn <FiArrowUpRight aria-hidden="true" /></a></article>
     </div>
   </section>;
 }
