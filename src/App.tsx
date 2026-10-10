@@ -110,7 +110,7 @@ const experience = [
       {
         tag: "TREX LEAD  /  GO-LIVE 10 NOV 2026",
         title: "Beverage Container Return Scheme (BCRS)",
-        text: "Leading TREX-side design and development of Singapore's Beverage Container Return Scheme across TREX and iShopChangi — from requirements with the business team to eligible-product flagging, the deposit as a separate price and order line item, refund logic, invoice changes, and TREX-to-SAP Commerce sync. Covers every eligible beverage, wine, and pharmacy product across all Changi merchants; the end-to-end demo was well received by the business team.",
+        text: "Leading TREX-side design and development of Singapore's Beverage Container Return Scheme — a 10-cent refundable deposit on every eligible beverage, wine, and pharmacy container across all Changi merchants. I own the full TREX implementation (product setup, approval flow, bulk upload, gift-with-purchase handling, and order payment details) and built the SAP Commerce side of refunds, reports, receipts, and emails. Gathered requirements with the business team and presented the end-to-end demo, from product setup to refund and reporting, which was well received.",
       },
       {
         tag: "SOLE OWNER  /  CLIENT RECOGNIZED",
@@ -140,7 +140,7 @@ const experience = [
     achievements: [],
     details: [
       "Build OCC APIs, custom extensions, items.xml models, and populators/converters from business requirements.",
-      "Deliver the iShopChangi side of BCRS: deposit pricing, order lines, refunds, and invoices for eligible products.",
+      "Built the BCRS refund, report, receipt, and email changes: automatic deposit refunds, the Master Sales Report, receipts and delivery order slips.",
       "Work with FlexibleSearch, ImpEx, Solr, CronJobs, catalog synchronization, and Backoffice.",
       "Troubleshoot cross-layer incidents between TREX and SAP Commerce and validate releases.",
     ],
