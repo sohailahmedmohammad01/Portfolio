@@ -16,4 +16,4 @@ npm run lint
 npm run build
 ```
 
-The downloadable résumé is in `public/docs/resume.pdf`. The photographs in `src/images` were provided for this portfolio.
+The downloadable résumé is in `public/docs/Mohammad_Sohail_Ahmed_Resume.pdf`. The photographs in `src/images` were provided for this portfolio.

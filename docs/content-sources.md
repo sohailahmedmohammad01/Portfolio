@@ -1,6 +1,6 @@
 # Portfolio content sources
 
-- Supplied resume: `public/docs/resume.pdf`. Used for employment, technical skills, engineering projects, AWS certification, NPTEL course, degree, graduation month, and GPA.
+- Supplied resume: `public/docs/Mohammad_Sohail_Ahmed_Resume.pdf`. Used for employment, technical skills, engineering projects, AWS certification, NPTEL course, degree, graduation month, and GPA.
 - Public LinkedIn listing: https://in.linkedin.com/in/mohammad-sohail-ahmed (checked September 28, 2026). Matched by exact profile slug, CJSS Technologies, and RGUKT Basar. Used for Oracle issue date and credential ID, Pregrad Data Science certificate, Python Core listing, Maven, education years, and the Real Estate Platform project.
 - Supplied award photographs and the user's recognition statement. The photograph labels the award "Phoenix Award", "Employee of the month", June 2026. The user's statement and resume describe Best Employee recognition for AI innovation and client delivery.
 

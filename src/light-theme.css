@@ -1,0 +1,254 @@
+/* Light theme: ivory and navy with a champagne-gold accent. Loaded after premium.css. */
+:root{--accent:#14213d;--accent-hover:#22335a;--accent-hi:#b08d57;--gold:#7a5c32;--gold-display:#a3804a;--accent-ink:#faf8f3;--wash:rgba(176,141,87,.10);--wash-2:rgba(176,141,87,.18);--bg:#faf8f3;--bg-2:#f3eee4;--ink:#14213d;--body:#3a4558;--muted:#5c6475;--faint:#636a7a;--line:rgba(20,33,61,.09);--line-2:rgba(20,33,61,.16);--surface:#fff;--shadow:0 1px 2px rgba(20,33,61,.05),0 12px 32px rgba(20,33,61,.07);--shadow-lift:0 2px 4px rgba(20,33,61,.06),0 24px 56px rgba(20,33,61,.12);color:var(--body);background:var(--bg)}
+body{background:var(--bg)}
+::selection{background:var(--wash-2);color:var(--ink)}
+:focus-visible{outline-color:var(--gold)}
+.skip-link{background:#fff;color:var(--ink);border-color:var(--gold)}
+.text-link{color:var(--gold);border-color:rgba(176,141,87,.35)}
+.text-link:hover{color:var(--accent-hover);border-color:var(--gold)}
+
+/* Header */
+.site-header{background:rgba(250,248,243,.82);border-color:var(--line);color:var(--ink)}
+.wordmark-monogram,.wordmark-name{color:var(--ink)}
+.wordmark-monogram span{color:var(--gold)}
+.desktop-nav a{color:var(--muted)}
+.desktop-nav a:hover{color:var(--gold)}
+.header-contact{padding:10px 18px;border:0;border-radius:999px;background:var(--accent);color:var(--accent-ink);transition:background .2s}
+.header-contact:hover{background:var(--accent-hover)}
+.menu-toggle{color:var(--ink);border-color:var(--line-2)}
+.mobile-nav{background:var(--bg);border-color:var(--line)}
+.mobile-nav a{color:var(--ink);border-color:var(--line)}
+
+/* Hero */
+.hero-section{background:radial-gradient(ellipse at 10% 8%,rgba(176,141,87,.13) 0%,transparent 58%),radial-gradient(ellipse at 95% 90%,rgba(176,141,87,.08) 0%,transparent 50%),var(--bg);color:var(--ink)}
+.hero-section::before{background:linear-gradient(90deg,transparent calc(50% - .5px),rgba(20,33,61,.035) 50%,transparent calc(50% + .5px));background-size:120px 100%}
+.hero .eyebrow{color:var(--gold)}
+.eyebrow-line{background:var(--accent)}
+.hero h1{color:var(--ink)}
+.hero h1 em{color:var(--gold)}
+.hero-role{color:var(--ink)}
+.hero-intro{color:var(--muted)}
+.hero-specialties{color:var(--body)}
+.hero-specialties i{background:var(--accent-hi)}
+.hero .button-dark{border-radius:999px;background:var(--accent);color:var(--accent-ink)}
+.hero .button-dark:hover{background:var(--accent-hover)}
+.hero .button-text{color:var(--ink);border-color:var(--line-2)}
+.hero .button-text:hover{border-color:var(--gold)}
+.hero .scroll-cue{color:var(--faint)}
+.scroll-cue svg{color:var(--gold)}
+.hero-image-frame{border-radius:20px;box-shadow:var(--shadow-lift)}
+.hero-photo-caption{border-radius:0 0 20px 20px}
+.hero-accent{border-color:rgba(176,141,87,.3);border-radius:20px}
+.hero-award-note{background:#fff;color:var(--ink);border-left-color:var(--gold);border-radius:12px;box-shadow:var(--shadow-lift)}
+.hero-award-note>span:first-child,.hero-award-note svg{color:var(--gold)}
+.hero-award-note small{color:var(--faint)}
+.hero-proof-strip,.hero-proof-strip>div+div{border-color:var(--line)}
+.hero-proof-strip span{color:var(--faint)}
+.hero-proof-strip strong{color:var(--ink)}
+.proof-award svg{color:var(--gold)}
+
+/* Section headings & about */
+.section-index{color:var(--gold)}
+.section-index span:first-child{border-color:rgba(176,141,87,.35)}
+.section-heading h2{color:var(--ink)}
+.section-heading h2 em{color:var(--gold)}
+.section-heading>p,.detail-section-top>p{color:var(--muted)}
+.about-section,.education-section{background:var(--surface)}
+.about-intro{border-color:var(--line-2)}
+.about-intro::after{background:var(--accent)}
+.about-intro .large-copy{color:var(--ink)}
+.about-content>p{color:var(--muted)}
+.about-principles,.about-principles>div+div{border-color:var(--line)}
+.about-principles span{color:var(--gold)}
+.about-principles strong{color:var(--ink)}
+.about-principles small{color:var(--muted)}
+
+/* Experience */
+.experience-section{background:var(--bg-2);color:var(--ink)}
+.experience-section .section-heading>p{color:var(--muted)}
+.experience-section .section-index{color:var(--gold)}
+.employer-overview{border-color:var(--line-2)}
+.experience-number,.experience-client{color:var(--gold)}
+.employer-overview h3{color:var(--ink)}
+.employer-overview>strong{background:#fff;color:var(--ink);border-color:var(--line-2);border-radius:999px}
+.project-phase,.project-phase:nth-child(2){background:var(--surface);border-color:var(--line);border-radius:20px;box-shadow:var(--shadow)}
+.project-phase-heading{color:var(--gold)}
+.project-phase-heading span:last-child{color:var(--faint)}
+.project-phase h4{color:var(--ink)}
+.project-phase .experience-summary{color:var(--body)}
+.project-phase li{color:var(--body);border-color:var(--line)}
+.project-phase li::before{background:var(--accent-hi)}
+.experience-stack{color:var(--gold)}
+.project-achievements>div{background:var(--bg);border-color:var(--line);border-left-color:var(--gold);border-radius:12px}
+.project-achievements span{color:var(--gold)}
+.project-achievements strong{color:var(--ink)}
+.project-achievements p{color:var(--muted)}
+.project-innovation{background:linear-gradient(135deg,rgba(176,141,87,.10),rgba(176,141,87,.02) 60%),var(--surface);border-color:rgba(176,141,87,.22);border-left-color:var(--gold);border-radius:12px}
+.innovation-head span,.innovation-head svg{color:var(--gold)}
+.project-innovation>strong{color:var(--ink)}
+.innovation-subtitle{color:var(--muted)}
+.project-phase .project-innovation ul.innovation-points li{border-color:var(--line);color:var(--body)}
+.innovation-stack{border-color:var(--line)}
+.innovation-stack>div>span{color:var(--gold)}
+.project-phase .innovation-stack li{background:#fff;border-color:var(--line-2);border-radius:8px;color:var(--body)}
+.project-innovation .innovation-flow{background:var(--surface);border-color:var(--line);border-radius:12px}
+.flow-figure{background:var(--bg);border-color:var(--line);border-radius:12px}
+.flow-figure-release{margin-top:4px}
+.flow-figure figcaption{color:var(--gold)}
+
+/* Work */
+.work-section{background:var(--bg)}
+.work-count{color:var(--faint)}
+.work-card{background:var(--surface);border-color:var(--line);border-radius:20px;box-shadow:var(--shadow)}
+.work-card:hover{border-color:rgba(176,141,87,.3);box-shadow:var(--shadow-lift)}
+.work-card-top>span:first-child{color:var(--gold)}
+.work-card-number{color:rgba(20,33,61,.12)}
+.work-card h3{color:var(--ink)}
+.work-card p{color:var(--muted)}
+.work-card .work-detail{color:var(--body)}
+.work-card-bottom span{background:var(--bg-2);color:var(--body);border-radius:8px}
+.project-system,.system-02{background:var(--bg);color:var(--body);border:1px solid var(--line);border-radius:12px}
+.system-label{color:var(--gold);opacity:1}
+.system-footer,.system-02 .system-footer{border-color:var(--line);color:var(--muted)}
+.system-footer svg{color:var(--gold)}
+
+/* Skills */
+.skills-section{background:var(--bg-2)}
+.skill-card{background:var(--surface);border-color:var(--line);border-radius:20px;box-shadow:var(--shadow)}
+.skill-card:hover{border-color:rgba(176,141,87,.3);box-shadow:var(--shadow-lift)}
+.skill-icon{background:var(--wash);color:var(--gold);border-radius:12px}
+.skill-number{color:var(--faint)}
+.skill-card h3{color:var(--ink)}
+.skill-card>p{color:var(--muted)}
+.skill-pills li{background:var(--bg);border-color:var(--line);border-radius:8px;color:var(--body)}
+.ownership-note{background:var(--wash);border-color:rgba(176,141,87,.2);border-radius:12px;color:var(--muted)}
+.ownership-note strong{color:var(--ink)}
+.ownership-dot{background:var(--accent)}
+
+/* Education */
+.education-feature{border-color:var(--line-2)}
+.education-degree h3{color:var(--ink)}
+.education-degree>p,.education-location{color:var(--muted)}
+.education-dates{color:var(--faint)}
+.education-dates i{background:var(--line-2)}
+.education-logo{border-color:var(--line)}
+.education-result{background:var(--accent);color:var(--accent-ink);border-radius:20px}
+.education-result>span{color:rgba(250,248,243,.75)}
+.education-result small,.education-result>p{color:rgba(250,248,243,.8)}
+.education-result>div{color:var(--accent-ink);border-color:rgba(250,248,243,.22)}
+
+/* Credentials */
+.certifications-section{background:var(--bg)}
+.credential-card{background:var(--surface);border-color:var(--line);border-radius:20px;box-shadow:var(--shadow)}
+.credential-card:hover{box-shadow:var(--shadow-lift)}
+.credential-oracle{background:linear-gradient(115deg,#fff,#f6f1e7)}
+.credential-type,.credential-card-meta>span{color:var(--faint)}
+.credential-card h3{color:var(--ink)}
+.credential-subtitle,.credential-card-meta>p{color:var(--muted)}
+.credential-card-meta{border-color:var(--line)}
+.credential-card-meta>a{color:var(--gold)}
+.credential-card-brand>svg{color:var(--accent-hi)}
+
+/* Recognition */
+.recognition-section{background:var(--bg-2)}
+.award-line{color:var(--gold)}
+.award-line i{background:var(--accent)}
+.recognition-copy>p{color:var(--muted)}
+.recognition-copy .recognition-lead{color:var(--ink)}
+.recognition-contributions span{border-color:rgba(176,141,87,.3);border-radius:8px;color:var(--gold)}
+.client-recognition{background:var(--surface);border-color:var(--line);border-left-color:var(--gold);border-radius:12px}
+.client-recognition h3{color:var(--ink)}
+.client-recognition p{color:var(--muted)}
+.award-credit{border-color:var(--line);color:var(--faint)}
+.award-credit span{color:var(--gold)}
+.recognition-photos figure{border-radius:12px;box-shadow:var(--shadow-lift)}
+.recognition-photos figcaption{color:var(--muted)}
+
+/* Contact */
+.contact-section{background:var(--surface);color:var(--ink);border-top:1px solid var(--line)}
+.contact-top{color:var(--gold)}
+.contact-section h2{color:var(--ink)}
+.contact-section h2 em{color:var(--gold)}
+.contact-email{color:var(--ink);border-color:var(--line-2)}
+.contact-email:hover{color:var(--gold)}
+.contact-bottom a{color:var(--body)}
+.contact-bottom a:hover{color:var(--gold)}
+.contact-bottom>span{color:var(--faint)}
+.footer-fine{border-color:var(--line);color:var(--faint)}
+.footer-fine a:hover{color:var(--gold)}
+
+/* Clean display type: Bricolage Grotesque at 600 with gentle tracking (it was 800 with tight Manrope-era tracking). */
+body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.hero h1,.contact-section h2{font-weight:600;letter-spacing:-.035em;line-height:1.04}
+.section-heading h2,.credentials-intro h2{font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.wordmark-monogram,.work-card-number,.experience-number,.employer-overview .experience-number{font-weight:600;letter-spacing:-.04em}
+.work-card h3,.project-phase h4,.employer-overview h3,.experience-main h3,.education-degree h3,.credential-card h3,.credential-oracle h3,.project-supporting h3{font-weight:600;letter-spacing:-.025em}
+.skill-card h3,.client-recognition h3,.capability h3,.project-achievements strong,.project-innovation>strong,.about-principles strong{font-weight:600;letter-spacing:-.015em}
+.hero-role,.about-intro .large-copy,.about-content .large-copy,.recognition-copy .recognition-lead,.contact-email{letter-spacing:-.015em}
+.hero-award-note strong,.hero-proof-strip strong{font-weight:600;letter-spacing:-.01em}
+.education-result>strong{font-weight:500;letter-spacing:-.04em}
+.credential-aws .credential-card-brand>strong{letter-spacing:-.03em}
+
+/* Header: MS mark, title-case name, pill nav with active section, pill CTA. */
+.header-inner{min-height:76px;gap:24px}
+.wordmark{gap:12px}
+.brand-mark{display:block;flex:none;width:40px;height:41px}
+.brand-mark-m{fill:#14213d}
+.brand-mark-s{stroke:#14213d}
+.brand-mark-slash{fill:var(--accent-hi)}
+.wordmark-name{max-width:none;color:var(--ink);font:600 19px/1.2 "Bricolage Grotesque",sans-serif;letter-spacing:-.012em;white-space:nowrap}
+.desktop-nav{gap:2px}
+.desktop-nav a{padding:8px 13px;border-radius:999px;color:var(--muted);font:500 14.5px/1.2 "Hanken Grotesk",sans-serif;transition:background .2s,color .2s}
+.desktop-nav a:hover{color:var(--ink);background:rgba(20,33,61,.04)}
+.desktop-nav a.is-active{color:var(--ink);background:var(--wash)}
+.header-contact{padding:12px 22px;border:0;font:600 15px/1 "Hanken Grotesk",sans-serif;letter-spacing:0}
+@media(max-width:1240px){.header-inner{gap:16px}.desktop-nav a{padding:7px 8px;font-size:13.5px}.wordmark-name{font-size:17px}.header-contact{padding:11px 18px;font-size:14px}}
+@media(max-width:800px){.header-inner{min-height:68px}}
+
+/* Core Java: featured block at the top of the Skills section. */
+.java-feature{padding:32px;border:1px solid rgba(176,141,87,.18);border-radius:20px;background:linear-gradient(140deg,rgba(176,141,87,.10),rgba(176,141,87,0) 55%),var(--surface);box-shadow:var(--shadow);scroll-margin-top:96px}
+.java-feature-head{display:grid;grid-template-columns:1fr minmax(0,420px);gap:40px;align-items:end;margin-bottom:24px}
+.java-feature-label{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font:500 10px/1.4 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.15em}
+.java-feature-label svg{font-size:14px}
+.java-feature h3{margin:12px 0 0;color:var(--ink);font:600 clamp(26px,2.6vw,36px)/1.12 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em}
+.java-feature-head>p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.75}
+.java-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.java-stats>div{display:flex;flex-direction:column;gap:6px;padding:18px 20px}
+.java-stats>div+div{border-left:1px solid var(--line)}
+.java-stats strong{color:var(--gold);font:600 26px/1.05 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em}
+.java-stats span{color:var(--muted);font-size:12.5px;line-height:1.5}
+.java-concepts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:14px}
+.java-concept{display:flex;flex-direction:column;padding:20px 18px 18px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.java-concept-top{display:flex;align-items:center;gap:11px;margin-bottom:10px}
+.java-concept-icon{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--wash);color:var(--gold);font-size:16px}
+.java-concept h4{margin:0;color:var(--ink);font:600 16px/1.3 "Bricolage Grotesque",sans-serif;letter-spacing:-.01em}
+.java-concept>p{margin:0 0 14px;color:var(--muted);font-size:12.5px;line-height:1.6}
+.java-concept ul{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 14px;padding:0;list-style:none}
+.java-concept li{padding:4px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--body);font-size:11px;line-height:1.5}
+.java-practice{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);color:var(--body);font-size:12px;line-height:1.55}
+.java-practice span{display:block;margin-bottom:4px;color:var(--gold);font:500 9px/1.4 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.14em}
+.java-subhead{display:flex;align-items:center;gap:18px;margin:44px 0 20px;color:var(--gold);font:500 11px/1.4 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.15em}
+.java-subhead i{flex:1;height:1px;background:var(--line-2)}
+.java-strengths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:44px;border-top:1px solid var(--line-2)}
+.java-strength{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--line-2)}
+.java-strength-icon{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--surface);color:var(--gold);font-size:16px;box-shadow:var(--shadow)}
+.java-strength strong{display:block;margin:2px 0 5px;color:var(--ink);font:600 16px/1.35 "Bricolage Grotesque",sans-serif;letter-spacing:-.01em}
+.java-strength p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.65}
+@media(max-width:1200px){.java-concepts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:1050px){.java-feature-head{grid-template-columns:1fr;gap:14px}.java-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.java-stats>div:nth-child(3){border-left:0}.java-stats>div:nth-child(n+3){border-top:1px solid var(--line)}}
+@media(max-width:700px){.java-feature{padding:22px 18px}.java-concepts,.java-strengths{grid-template-columns:1fr}.java-subhead{margin-top:36px}}
+@media(max-width:420px){.java-stats{grid-template-columns:1fr}.java-stats>div+div{border-left:0;border-top:1px solid var(--line)}}
+
+/* Navy and champagne: decorative lines in champagne, display accents in a deeper gold. */
+.eyebrow-line,.about-intro::after,.award-line i,.ownership-dot{background:var(--accent-hi)}
+.hero h1 em,.section-heading h2 em,.contact-section h2 em{color:var(--gold-display)}
+.hero-section{background:radial-gradient(ellipse at 10% 8%,rgba(176,141,87,.12) 0%,transparent 58%),radial-gradient(ellipse at 95% 90%,rgba(20,33,61,.05) 0%,transparent 50%),var(--bg)}
+.desktop-nav a.is-active{background:rgba(20,33,61,.07)}
+.flow-node-ai rect{stroke:#b08d57}
+
+/* TREX AI impact metrics. */
+.innovation-metrics{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0 2px}
+.innovation-metrics>div{display:flex;align-items:baseline;gap:10px;padding:12px 18px;border:1px solid var(--line);border-left:3px solid var(--accent-hi);border-radius:0 12px 12px 0;background:var(--surface)}
+.innovation-metrics strong{color:var(--ink);font:600 26px/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em}
+.innovation-metrics span{color:var(--muted);font-size:13px;line-height:1.3}
+@media(max-width:520px){.innovation-metrics>div{flex:1 1 100%}}

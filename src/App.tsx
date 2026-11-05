@@ -1,9 +1,15 @@
-import { Fragment, useEffect, useState } from "react";
-import { FiArrowDown, FiArrowRight, FiArrowUpRight, FiAward, FiCheck, FiCpu, FiDownload, FiExternalLink, FiFileText, FiGrid, FiHome, FiLayers, FiMenu, FiShield, FiX } from "react-icons/fi";
+import { useEffect, useState } from "react";
+import { FiArrowDown, FiArrowRight, FiArrowUpRight, FiAward, FiCheck, FiCpu, FiDownload, FiExternalLink, FiMenu, FiX } from "react-icons/fi";
 import portrait from "./images/sohail-professional-portrait.png";
 import awardMoment from "./images/cjss-award-moment.jpg";
 import phoenixAward from "./images/cjss-phoenix-award.jpg";
 import { CredentialsSection, EducationSection, SkillsSection } from "./components/ProfileDetails";
+import { FlowDiagram } from "./components/FlowDiagram";
+import { BrandMark } from "./components/BrandMark";
+import { docusignFlow, ragFlow, releaseFlow, sapBcrsFlow, smartHisFlow, trexAiFlow, zaiqaFlow } from "./diagrams";
+
+const resumeFile = "Mohammad_Sohail_Ahmed_Resume.pdf";
+const resumeHref = `${import.meta.env.BASE_URL}docs/${resumeFile}`;
 
 const navigation = [
   { label: "About", href: "#about" },
@@ -16,8 +22,23 @@ const navigation = [
   { label: "Contact", href: "#contact" },
 ];
 
+function useActiveSection() {
+  const [active, setActive] = useState("");
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") return;
+    const sections = ["#top", ...navigation.map((item) => item.href)].map((href) => document.querySelector(href)).filter((el): el is Element => el !== null);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) setActive(entry.target.id === "top" ? "" : "#" + entry.target.id); });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+  return active;
+}
+
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const active = useActiveSection();
   useEffect(() => {
     if (!menuOpen) return;
     const closeMenu = (event: KeyboardEvent) => { if (event.key === "Escape") setMenuOpen(false); };
@@ -29,20 +50,20 @@ function Header() {
     <header className="site-header">
       <div className="header-inner shell">
         <a className="wordmark" href="#top" aria-label="Mohammad Sohail Ahmed, back to top">
-          <span className="wordmark-monogram">MS<span>.</span></span>
-          <span className="wordmark-name">MOHAMMAD SOHAIL AHMED</span>
+          <BrandMark />
+          <span className="wordmark-name">Mohammad Sohail Ahmed</span>
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
-          {navigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
+          {navigation.map((item) => <a key={item.href} href={item.href} className={active === item.href ? "is-active" : undefined} aria-current={active === item.href ? "location" : undefined}>{item.label}</a>)}
         </nav>
-        <a className="header-contact" href="mailto:sohailahmed.mohammad01@gmail.com">Let&apos;s connect <FiArrowRight aria-hidden="true" /></a>
+        <a className="header-contact" href="mailto:sohailahmed.mohammad01@gmail.com">Get in touch</a>
         <button className="menu-toggle" type="button" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} aria-controls="mobile-menu" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FiX /> : <FiMenu />}
         </button>
       </div>
       {menuOpen && <nav className="mobile-nav" id="mobile-menu" aria-label="Mobile navigation">
         {navigation.map((item) => <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>{item.label}<FiArrowRight aria-hidden="true" /></a>)}
-        <a href={`${import.meta.env.BASE_URL}docs/resume.pdf`} download onClick={() => setMenuOpen(false)}>Download résumé <FiDownload aria-hidden="true" /></a>
+        <a href={resumeHref} download={resumeFile} onClick={() => setMenuOpen(false)}>Download résumé <FiDownload aria-hidden="true" /></a>
       </nav>}
     </header>
   );
@@ -51,14 +72,14 @@ function Header() {
 function Hero() {
   return <section className="hero-section" id="top"><div className="hero shell">
     <div className="hero-copy">
-      <div className="eyebrow"><span className="eyebrow-line" /> BACKEND SOFTWARE ENGINEER</div>
+      <div className="eyebrow"><span className="eyebrow-line" /> CORE JAVA · BACKEND SOFTWARE ENGINEER</div>
       <h1>Mohammad<br /><em>Sohail Ahmed.</em></h1>
       <p className="hero-role">Engineering dependable systems.<br />Exploring intelligent possibilities.</p>
-      <p className="hero-intro">Java, Spring Boot, and AWS engineer specializing in TREX development and TREX–SAP Commerce Cloud integration, with hands-on experience in RAG and multi-agent AI systems. Based in Hyderabad, building scalable backend solutions and AI applications that deliver real-world impact.</p>
-      <div className="hero-specialties"><span>BACKEND</span><i /><span>COMMERCE</span><i /><span>APPLIED AI</span></div>
+      <p className="hero-intro">Core Java and Spring Boot engineer with nearly three years of building web applications and REST / GraphQL web services for Changi Airport Group — from design and testing to performance tuning and production support. Based in Hyderabad, with hands-on experience in RAG and multi-agent AI systems.</p>
+      <div className="hero-specialties"><span>CORE JAVA</span><i /><span>WEB SERVICES</span><i /><span>AVIATION DOMAIN</span><i /><span>APPLIED AI</span></div>
       <div className="hero-actions">
         <a className="button button-dark" href="#work">Explore my work <FiArrowRight aria-hidden="true" /></a>
-        <a className="button button-text" href={`${import.meta.env.BASE_URL}docs/resume.pdf`} download>Download résumé <FiDownload aria-hidden="true" /></a>
+        <a className="button button-text" href={resumeHref} download={resumeFile}>Download résumé <FiDownload aria-hidden="true" /></a>
       </div>
       <a className="scroll-cue" href="#about"><FiArrowDown aria-hidden="true" /> DISCOVER MY JOURNEY</a>
     </div>
@@ -68,7 +89,7 @@ function Hero() {
       <div className="hero-photo-caption"><span>MOHAMMAD SOHAIL AHMED</span><span>HYDERABAD · INDIA</span></div>
       <div className="hero-accent" aria-hidden="true" />
     </div>
-  </div><div className="hero-proof-strip shell"><div><span>CURRENTLY</span><strong>Software Engineer at CJSS</strong></div><div><span>CLIENT DELIVERY</span><strong>Changi Airport Group</strong></div><div><span>BUILDING</span><strong>Zaiqa hospitality platform</strong></div><div><span>RECOGNIZED FOR</span><strong className="proof-award"><FiAward aria-hidden="true" />AI Innovation & Client Recognition</strong></div></div></section>;
+  </div><div className="hero-proof-strip shell"><div><span>CURRENTLY</span><strong>Software Engineer at CJSS</strong></div><div><span>AVIATION DOMAIN</span><strong>Changi Airport Group</strong></div><div><span>CORE STACK</span><strong>Java · Spring Boot · SQL</strong></div><div><span>RECOGNIZED FOR</span><strong className="proof-award"><FiAward aria-hidden="true" />AI Innovation & Client Recognition</strong></div></div></section>;
 }
 
 function SectionHeading({ number, eyebrow, title, copy }: { number: string; eyebrow: string; title: string; copy?: string }) {
@@ -123,6 +144,26 @@ const experience = [
         text: "Evaluated Datadog and Dynatrace through a hands-on POC and recommended the platform for simpler, centralized application logging and monitoring.",
       },
     ],
+    diagrams: [{ caption: "DOCUSIGN MERCHANT ONBOARDING  /  SYSTEM FLOW", spec: docusignFlow }],
+    release: true,
+    innovation: {
+      tag: "AI & INNOVATION  /  AI MICROSERVICE",
+      title: "TREX AI — Product Catalogue Enrichment Platform",
+      subtitle: "An AI microservice with merchant and operator product workflows.",
+      metrics: [{ value: "100,000+", label: "products enriched" }, { value: "70–80%", label: "less manual catalogue QA" }],
+      spec: trexAiFlow,
+      points: [
+        "Designed and delivered an AI-driven product enrichment flow that helps merchants improve catalogue content (names, descriptions, category attributes) before create/update, with human-in-the-loop review and field-level acceptance.",
+        "Built an operator AI audit and approval path that surfaces severity-ranked review findings and optional fixes before approve/reject, cutting manual catalogue QA effort by 70–80%.",
+        "Implemented a multi-provider LLM router (OpenAI, Gemini, AWS Bedrock) with runtime-selectable live agents, persona-specific prompts (merchant vs operator), and DynamoDB-backed rules, so guideline changes need no redeploy.",
+        "Added vision-based image validation, optional web search enrichment, configurable suggestion sources, and delta enrichment so only meaningful field changes are proposed.",
+        "Integrated enrichment into the existing product UX through a shared preview/diff modal, GraphQL create/update/status mutations, and admin configuration for attributes, agent access, and suggestion modes.",
+      ],
+      stackGroups: [
+        { label: "AI SERVICE", items: ["Python", "FastAPI", "Uvicorn", "Pydantic", "Boto3", "DynamoDB", "S3"] },
+        { label: "LLM & VISION", items: ["OpenAI", "Google Gemini", "AWS Bedrock (Claude Haiku)", "Structured JSON output", "Vision validation", "Confidence scoring"] },
+      ],
+    },
     details: [
       "Integrated TREX with SAP Commerce Cloud for iShopChangi, covering catalog synchronization, pricing, promotions, and order data exchange.",
       "Built and maintained Java and Spring Boot microservices, REST and GraphQL APIs, and marketplace business logic.",
@@ -130,14 +171,16 @@ const experience = [
       "Resolved production defects across backend services, integrations, and database operations.",
       "Troubleshot backend and database bottlenecks using Datadog and Dynatrace and supported performance optimization.",
       "Wrote JUnit and Mockito tests, supported regression testing, and validated releases before production.",
+      "Deliver in two-week Agile sprints tracked in Jira, with requirements and release notes in Confluence and biweekly releases promoted DEV → QA → business sign-off → PROD.",
     ],
-    stack: "JAVA  /  SPRING BOOT  /  AWS  /  DYNAMODB  /  SAP COMMERCE CLOUD  /  DOCUSIGN  /  GRAPHQL",
+    stack: "JAVA  /  SPRING BOOT  /  AWS  /  DYNAMODB  /  SAP COMMERCE CLOUD  /  DOCUSIGN  /  GRAPHQL  /  PYTHON  /  FASTAPI  /  LLMS",
   },
   {
     period: "JAN 2024 — PRESENT",
     project: "iShopChangi (ISC) — E-commerce on SAP Commerce Cloud",
     summary: "Building and supporting the SAP Commerce Cloud storefront backend that TREX powers — catalog, pricing, promotions, checkout, and orders.",
     achievements: [],
+    diagrams: [{ caption: "TREX ↔ SAP COMMERCE  /  BCRS DEPOSIT FLOW", spec: sapBcrsFlow }],
     details: [
       "Build OCC APIs, custom extensions, items.xml models, and populators/converters from business requirements.",
       "Built the BCRS refund, report, receipt, and email changes: automatic deposit refunds, the Master Sales Report, receipts and delivery order slips.",
@@ -166,7 +209,20 @@ function Experience() {
           {role.achievements.length > 0 && <div className="project-achievements" aria-label="Key achievements">{role.achievements.map((item) => <div key={item.title}>
             <span>{item.tag}</span><strong>{item.title}</strong><p>{item.text}</p>
           </div>)}</div>}
+          {role.diagrams.map((diagram) => <figure className="flow-figure" key={diagram.caption}><figcaption>{diagram.caption}</figcaption><FlowDiagram spec={diagram.spec} /></figure>)}
+          {role.innovation && <div className="project-innovation" aria-label="AI and innovation">
+            <div className="innovation-head"><span><FiCpu aria-hidden="true" />{role.innovation.tag}</span></div>
+            <strong>{role.innovation.title}</strong>
+            <p className="innovation-subtitle">{role.innovation.subtitle}</p>
+            <div className="innovation-metrics" aria-label="TREX AI impact">{role.innovation.metrics.map((metric) => <div key={metric.label}><strong>{metric.value}</strong><span>{metric.label}</span></div>)}</div>
+            <FlowDiagram spec={role.innovation.spec} className="innovation-flow" />
+            <ul className="innovation-points">{role.innovation.points.map((point) => <li key={point}>{point}</li>)}</ul>
+            <div className="innovation-stack">{role.innovation.stackGroups.map((group) => <div key={group.label}>
+              <span>{group.label}</span><ul>{group.items.map((item) => <li key={item}>{item}</li>)}</ul>
+            </div>)}</div>
+          </div>}
           <ul>{role.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>
+          {role.release && <figure className="flow-figure flow-figure-release"><figcaption>RELEASE FLOW  /  BIWEEKLY, AGILE</figcaption><FlowDiagram spec={releaseFlow} /></figure>}
           <p className="experience-stack">{role.stack}</p>
         </article>)}
       </div>
@@ -183,9 +239,9 @@ const work = [
     detail: "A Spring Boot modular monolith with 14 domain modules whose boundaries are verified by Spring Modulith, branch-scoped JWT and RBAC across seven roles, Flyway-managed PostgreSQL, and a React and TypeScript operations UI.",
     tools: ["JAVA 21", "SPRING BOOT", "SPRING MODULITH", "POSTGRESQL", "REACT"],
     system: "system-featured",
-    flow: [[FiHome, "Hotel PMS"], [FiGrid, "Restaurant ops"], [FiLayers, "Billing & reports"]] as const,
+    spec: zaiqaFlow,
+    tone: "dark",
     footer: "Modular · Multi-branch · Role-scoped",
-    ariaLabel: "Zaiqa platform: hotel PMS and restaurant operations flowing into billing and reports",
     featured: true,
   },
   {
@@ -196,21 +252,21 @@ const work = [
     detail: "Built with Spring Boot and FastAPI, using Gemini, Qdrant vector search, metadata filtering, and role-based access control.",
     tools: ["SPRING BOOT", "FASTAPI", "QDRANT", "GEMINI"],
     system: "system-01",
-    flow: [[FiFileText, "Documents"], [FiCpu, "Retrieval"], [FiLayers, "Grounded answers"]] as const,
+    spec: ragFlow,
+    tone: "dark",
     footer: "Context-aware · Access-controlled",
-    ariaLabel: "RAG flow: documents, retrieval, and grounded answers",
   },
   {
     number: "03",
-    label: "FREELANCE  /  SMART SOFTECH SOLUTIONS",
+    label: "BACKEND PROJECT  /  HEALTHCARE",
     title: "SmartHIS",
-    description: "A healthcare information system for Smart Softech Solutions, where I work as a freelance backend developer: a modular backend for patient registration, appointments, billing, pharmacy, laboratory, administration, and audit logging.",
+    description: "A healthcare information system with a modular backend for patient registration, appointments, billing, pharmacy, laboratory, administration, and audit logging.",
     detail: "Designed relational data models and secure workflows with JWT and role-based access, plus validation and deployment troubleshooting.",
     tools: ["JAVA", "SPRING BOOT", "POSTGRESQL", "JWT / RBAC"],
     system: "system-02",
-    flow: [[FiFileText, "Patients"], [FiCpu, "Services"], [FiShield, "Secure records"]] as const,
+    spec: smartHisFlow,
+    tone: "light",
     footer: "Modular · Auditable · Role-based",
-    ariaLabel: "Healthcare system: patient workflows, services, and secure data",
   },
 ];
 
@@ -220,9 +276,9 @@ function Work() {
       <div className="work-top"><SectionHeading number="03" eyebrow="SELECTED WORK" title="Ideas into architecture." copy="Systems that connect careful engineering with practical problems — from hospitality operations and intelligent retrieval to healthcare." /><span className="work-count">THREE SELECTED PROJECTS</span></div>
       <div className="work-grid">{work.map((project) => <article className={"work-card" + (project.featured ? " work-card-featured" : "")} key={project.number}>
         <div className="work-card-top"><span>{project.label}</span><span className="work-card-number">{project.number}</span></div>
-        <div className={"project-system " + project.system} aria-label={project.ariaLabel}>
-          <span className="system-label">SYSTEM OVERVIEW</span>
-          <div className="system-flow">{project.flow.map(([Icon, text], i) => <Fragment key={text}>{i > 0 && <i />}<span><Icon aria-hidden="true" /><small>{text}</small></span></Fragment>)}</div>
+        <div className={"project-system " + project.system}>
+          <span className="system-label">SYSTEM FLOW</span>
+          <FlowDiagram spec={project.spec} tone={project.tone as "dark" | "light"} className="system-diagram" />
           <div className="system-footer"><FiCheck aria-hidden="true" />{project.footer}</div>
         </div>
         <div className="work-card-body"><h3>{project.title}</h3><p>{project.description}</p><p className="work-detail">{project.detail}</p></div>
@@ -259,7 +315,7 @@ function Contact() {
     <div className="contact-top"><span>08 / LET&apos;S CONNECT</span><span>HAVE AN IDEA OR OPPORTUNITY?</span></div>
     <h2>Let&apos;s build something <em>meaningful.</em></h2>
     <a className="contact-email" href="mailto:sohailahmed.mohammad01@gmail.com">sohailahmed.mohammad01@gmail.com <FiArrowRight aria-hidden="true" /></a>
-    <div className="contact-bottom"><div><a href="https://www.linkedin.com/in/mohammad-sohail-ahmed/" target="_blank" rel="noreferrer">LinkedIn <FiExternalLink aria-hidden="true" /></a><a href="tel:+918106637318">+91 81066 37318 <FiArrowRight aria-hidden="true" /></a><a href={`${import.meta.env.BASE_URL}docs/resume.pdf`} download>Download résumé <FiDownload aria-hidden="true" /></a></div><span>HYDERABAD, INDIA</span></div>
+    <div className="contact-bottom"><div><a href="https://www.linkedin.com/in/mohammad-sohail-ahmed/" target="_blank" rel="noreferrer">LinkedIn <FiExternalLink aria-hidden="true" /></a><a href="https://github.com/sohailahmedmohammad01" target="_blank" rel="noreferrer">GitHub <FiExternalLink aria-hidden="true" /></a><a href="tel:+918106637318">+91 81066 37318 <FiArrowRight aria-hidden="true" /></a><a href={resumeHref} download={resumeFile}>Download résumé <FiDownload aria-hidden="true" /></a></div><span>HYDERABAD, INDIA</span></div>
     <div className="footer-fine"><span>© {new Date().getFullYear()} MOHAMMAD SOHAIL AHMED</span><span>DESIGNED WITH INTENTION · BUILT TO LAST</span><a href="#top">BACK TO TOP ↑</a></div>
   </div></footer>;
 }
