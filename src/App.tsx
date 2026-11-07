@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FiArrowDown, FiArrowRight, FiArrowUpRight, FiAward, FiCheck, FiCpu, FiDownload, FiExternalLink, FiMenu, FiX } from "react-icons/fi";
-import portrait from "./images/sohail-professional-portrait.png";
+import portrait from "./images/sohail-professional-portrait.webp";
 import awardMoment from "./images/cjss-award-moment.jpg";
 import phoenixAward from "./images/cjss-phoenix-award.jpg";
 import { CredentialsSection, EducationSection, SkillsSection } from "./components/ProfileDetails";
@@ -129,7 +129,7 @@ const experience = [
     summary: "Developing and supporting cloud-native backend services for products, pricing, orders, merchants, contracts, users, and promotions.",
     achievements: [
       {
-        tag: "TREX LEAD  /  GO-LIVE 10 NOV 2026",
+        tag: "TREX LEAD",
         title: "Beverage Container Return Scheme (BCRS)",
         text: "Leading TREX-side design and development of Singapore's Beverage Container Return Scheme — a 10-cent refundable deposit on every eligible beverage, wine, and pharmacy container across all Changi merchants. I own the full TREX implementation (product setup, approval flow, bulk upload, gift-with-purchase handling, and order payment details) and built the SAP Commerce side of refunds, reports, receipts, and emails. Gathered requirements with the business team and presented the end-to-end demo, from product setup to refund and reporting, which was well received.",
       },

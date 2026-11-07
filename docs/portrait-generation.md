@@ -2,7 +2,7 @@
 
 Mode: built-in image generation tool, identity-preserving edit of the user-provided suit photograph.
 
-Final asset: `src/images/sohail-professional-portrait.png`
+Final asset: `src/images/sohail-professional-portrait.webp`
 
 ## Exact prompt
 
